@@ -1,7 +1,6 @@
 package com.elaynegomes.api.entities;
 
 import com.elaynegomes.api.enums.TipoEnum;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -89,6 +88,7 @@ public class Lancamento implements Serializable {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_funcionario", referencedColumnName = "id")
     public Funcionario getFuncionario() {
         return funcionario;
     }

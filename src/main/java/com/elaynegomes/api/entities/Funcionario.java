@@ -133,6 +133,7 @@ public class Funcionario implements Serializable {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
     public Empresa getEmpresa() {
         return empresa;
     }
