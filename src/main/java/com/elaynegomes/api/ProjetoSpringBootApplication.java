@@ -1,6 +1,5 @@
 package com.elaynegomes.api;
 
-import com.elaynegomes.api.entities.Empresa;
 import com.elaynegomes.api.repositories.EmpresaRepository;
 import com.elaynegomes.api.services.ExemploService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
-
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class ProjetoSpringBootApplication {
 
 	@Value("${paginacao.qtd_por_pagina}")
