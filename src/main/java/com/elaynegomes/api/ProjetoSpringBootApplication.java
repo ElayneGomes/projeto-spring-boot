@@ -1,6 +1,7 @@
 package com.elaynegomes.api;
 
 import com.elaynegomes.api.repositories.EmpresaRepository;
+import com.elaynegomes.api.services.ExemploCacheService;
 import com.elaynegomes.api.services.ExemploService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,9 +9,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@EnableCaching
 public class ProjetoSpringBootApplication {
 
 	@Value("${paginacao.qtd_por_pagina}")
@@ -22,13 +25,27 @@ public class ProjetoSpringBootApplication {
 	@Autowired
 	private ExemploService exemploService;
 
+	@Autowired
+	private ExemploCacheService exemploCacheService;
+
 	public static void main(String[] args) {
-//		System.out.println("Iniciando Projeto Spring Boot");
-//		SpringApplication.run(ProjetoSpringBootApplication.class, args);
+		System.out.println("Iniciando Projeto Spring Boot");
+		SpringApplication.run(ProjetoSpringBootApplication.class, args);
 	}
 
-//	@Bean
-//	public CommandLineRunner commandLineRunner() {
+
+	@Bean
+	public CommandLineRunner commandLineRunner() {
+
+		return args -> {
+			System.out.println("Executando serviço pela primeira vez: ");
+			System.out.println(this.exemploCacheService.exemploCache());
+
+			System.out.println("Executando o serviço pela segunda vez, deve obter dados do cache: ");
+			System.out.println(this.exemploCacheService.exemploCache());
+		};
+
+
 //		return args -> {
 //			this.exemploService.testarServico();
 //		};
@@ -73,6 +90,6 @@ public class ProjetoSpringBootApplication {
 //			System.out.println("Senha válida: " + SenhaUtils.senhaValida("123456", senhaEncoded));
 //		};
 
-//	}
+	}
 
 }
