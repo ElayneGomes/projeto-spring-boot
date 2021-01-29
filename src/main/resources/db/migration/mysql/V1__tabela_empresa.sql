@@ -38,3 +38,11 @@ CREATE TABLE lancamento
     FOREIGN KEY (id_funcionario)
     REFERENCES funcionario (id)
 );
+
+CREATE TABLE usuario
+(
+    id               int PRIMARY KEY AUTO_INCREMENT,
+    email            varchar(255) NOT NULL,
+    senha            varchar(255) NOT NULL,
+    perfil           varchar(255) NOT NULL
+);

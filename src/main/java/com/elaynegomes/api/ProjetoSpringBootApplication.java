@@ -23,15 +23,15 @@ public class ProjetoSpringBootApplication {
 	private ExemploService exemploService;
 
 	public static void main(String[] args) {
-		System.out.println("Iniciando Projeto Spring Boot");
-		SpringApplication.run(ProjetoSpringBootApplication.class, args);
+//		System.out.println("Iniciando Projeto Spring Boot");
+//		SpringApplication.run(ProjetoSpringBootApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner() {
-		return args -> {
-			this.exemploService.testarServico();
-		};
+//	@Bean
+//	public CommandLineRunner commandLineRunner() {
+//		return args -> {
+//			this.exemploService.testarServico();
+//		};
 
 //		return args -> {
 //			Empresa empresa = new Empresa();
@@ -73,6 +73,6 @@ public class ProjetoSpringBootApplication {
 //			System.out.println("Senha válida: " + SenhaUtils.senhaValida("123456", senhaEncoded));
 //		};
 
-	}
+//	}
 
 }
