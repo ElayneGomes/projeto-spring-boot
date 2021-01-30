@@ -17,9 +17,9 @@ public class TokenSpringBootApplication {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public static void main(String[] args) {
-//        SpringApplication.run(TokenSpringBootApplication.class, args);
-    }
+//    public static void main(String[] args) {
+////        SpringApplication.run(TokenSpringBootApplication.class, args);
+//    }
 
 //    @Bean
 //    public CommandLineRunner commandLineRunner() {

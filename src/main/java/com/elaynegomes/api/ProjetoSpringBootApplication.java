@@ -28,10 +28,10 @@ public class ProjetoSpringBootApplication {
 	@Autowired
 	private ExemploCacheService exemploCacheService;
 
-	public static void main(String[] args) {
-//		System.out.println("Iniciando Projeto Spring Boot");
-//		SpringApplication.run(ProjetoSpringBootApplication.class, args);
-	}
+//	public static void main(String[] args) {
+////		System.out.println("Iniciando Projeto Spring Boot");
+////		SpringApplication.run(ProjetoSpringBootApplication.class, args);
+//	}
 
 
 //	@Bean
