@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Bean;
 public class ProjetoSpringBootApplication {
 
 	@Value("${paginacao.qtd_por_pagina}")
-	private int qrdPorPagina;
+	private int qtdPorPagina;
 
 	@Autowired
 	private EmpresaRepository empresaRepository;
@@ -29,21 +29,21 @@ public class ProjetoSpringBootApplication {
 	private ExemploCacheService exemploCacheService;
 
 	public static void main(String[] args) {
-		System.out.println("Iniciando Projeto Spring Boot");
-		SpringApplication.run(ProjetoSpringBootApplication.class, args);
+//		System.out.println("Iniciando Projeto Spring Boot");
+//		SpringApplication.run(ProjetoSpringBootApplication.class, args);
 	}
 
 
-	@Bean
-	public CommandLineRunner commandLineRunner() {
-
-		return args -> {
-			System.out.println("Executando serviço pela primeira vez: ");
-			System.out.println(this.exemploCacheService.exemploCache());
-
-			System.out.println("Executando o serviço pela segunda vez, deve obter dados do cache: ");
-			System.out.println(this.exemploCacheService.exemploCache());
-		};
+//	@Bean
+//	public CommandLineRunner commandLineRunner() {
+//
+//		return args -> {
+//			System.out.println("Executando serviço pela primeira vez: ");
+//			System.out.println(this.exemploCacheService.exemploCache());
+//
+//			System.out.println("Executando o serviço pela segunda vez, deve obter dados do cache: ");
+//			System.out.println(this.exemploCacheService.exemploCache());
+//		};
 
 
 //		return args -> {
@@ -77,7 +77,7 @@ public class ProjetoSpringBootApplication {
 //		};
 
 //		return args -> {
-//			System.out.println("### Quantidade de elementos por página: " + this.qrdPorPagina);
+//			System.out.println("### Quantidade de elementos por página: " + this.qtdPorPagina);
 //		};
 
 //		return args -> {
@@ -90,6 +90,6 @@ public class ProjetoSpringBootApplication {
 //			System.out.println("Senha válida: " + SenhaUtils.senhaValida("123456", senhaEncoded));
 //		};
 
-	}
+//	}
 
 }
