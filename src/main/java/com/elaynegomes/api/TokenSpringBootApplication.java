@@ -18,7 +18,7 @@ public class TokenSpringBootApplication {
     private UsuarioRepository usuarioRepository;
 
     public static void main(String[] args) {
-        SpringApplication.run(TokenSpringBootApplication.class, args);
+//        SpringApplication.run(TokenSpringBootApplication.class, args);
     }
 
 //    @Bean
